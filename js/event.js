@@ -1,10 +1,11 @@
-const checkboxes = document.querySelectorAll('input[name=chk]');
+const checkboxes = document.querySelectorAll('input');
 
 checkboxes.forEach((checkbox) => {
   checkbox.addEventListener('click', function(){
-    // 여기가 부모의 자식들로 
-    for(chk of checkboxes){
-      chk.checked = false
+    const thisName = this.name
+    const Siblings = document.querySelectorAll('input[name='+thisName+']')
+    for(Sibling of Siblings){
+      Sibling.checked = false
     }
     this.checked = true
   })
