@@ -1,10 +1,10 @@
-function chk(e) {
-  
-    const checkboxes = document.getElementsByName("chkEl");
-    
-    checkboxes.forEach((cb) => {
-      cb.checked = false;
-    })
-    
-    e.checked = true;
-  }
+const checkboxes = document.querySelectorAll('input[name=chk01_El]');
+
+checkboxes.forEach((checkbox) => {
+  checkbox.addEventListener('click', function(){
+    for(chk of checkboxes){
+      chk.checked = false
+    }
+    this.checked = true
+  })
+})
