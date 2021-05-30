@@ -6,7 +6,9 @@ checkboxes.forEach((checkbox) => {
     const Siblings = document.querySelectorAll('input[name='+thisName+']')
     for(Sibling of Siblings){
       Sibling.checked = false
+      Sibling.nextElementSibling.style.color = '#000'
     }
     this.checked = true
+    this.nextElementSibling.style.color = 'red'
   })
 })
